@@ -1,0 +1,33 @@
+body {
+    background-color:#183259;
+    font-family: "Noto Sans", "Noto Sans CJK JP", sans-serif;
+}
+
+a {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 2.0em;
+    text-decoration: none;
+}
+
+a.home {
+    color: #FFFFFF;
+}
+
+a.favoris {
+    color: #CCAD34;
+}
+
+label {
+    color: #FFFFFF;
+}
+
+h2 {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+span {
+    color: #FFFFFF;
+}

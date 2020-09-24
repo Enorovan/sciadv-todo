@@ -1,0 +1,36 @@
+<head>
+  <base href="/home">
+</head>
+<app-dashboard></app-dashboard>
+<body>
+  <div>
+    <form [formGroup]="sciadvForm" (ngSubmit)="onSubmit(sciadvForm.value.name)">
+      <td>
+        <label for="name">
+          <input type="text" formControlName="name">
+        </label>
+        <button type="submit">Add</button>
+        <span class="mocked"> Games: "ch", "chn", "chlcc", "sg", "sge", "sgmde", "sglbp", "sg0", "rn", "rne", "rnd" "cc", "cclcc", "on", "ac".</span>
+      </td>
+    </form>  
+  </div>
+  <ul>
+    <li *ngFor="let sciadv of sciadvs">
+      <span (click)="onSelect(sciadv)">{{ sciadv.name }} </span>
+      <button type="submit"(click)="addFav(sciadv)">fav</button>
+      <button type="submit"(click)="remFav(sciadv)">unfav</button>
+      <button type="submit"(click)="delete(sciadv)">del</button>   
+    </li>
+  </ul>
+  
+  <div *ngIf="selectedSciadv">
+    <h2><u>Title :</u> {{ selectedSciadv.name }}</h2>
+    <span><u>In-universe Year :</u> {{ selectedSciadv.year }}</span><br>
+    <span><u>ADV Type :</u> {{ selectedSciadv.type }}</span><br>
+    <span><u>Main Character :</u> {{ selectedSciadv.casting }}</span><br>
+    <span><u>Length :</u> {{ selectedSciadv.length }}</span><br>
+    <span><u>Release Date :</u> {{ selectedSciadv.releaseDate }}</span><br>
+    <img src="{{ selectedSciadv.image }}" height="407" width="290"><br>
+    <button type="submit" (click)="deleteInfo()">close</button>
+  </div>
+</body>
